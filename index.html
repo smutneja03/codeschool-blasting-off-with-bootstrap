@@ -7,29 +7,63 @@
   </head>
   <body>
     <div class='navbar navbar-default navbar-static-top'>
+      <!-- navbar changes link colors in the header and adds padding
+           navbar default for greyish background and navbar inverse for blackish background
+           navbar static top and navbar fixed top for the positioning of navbar with page scroll  -->
       <div class='container'>
-        <a href='/' class='navbar-brand'>Blasting Off With Bootstrap</a>
+        
+        <div class="navbar-header">
+          <a href='/' class='navbar-brand'>Blasting Off With Bootstrap</a>        
+          <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <!-- Navbar-toggle : Navigation toggles float to the right
+            Toggle the existence of the .collapse class -->
+            <span class="sr-only">Toggle Navigation</span>
+            <!-- this is meant specifically for screen reader only -->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
 
-        <ul class='nav navbar-nav navbar-right'>
+        <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+          <!-- nav adds padding for all of the navigation list
+          navbar nav makes it inline and right floats it to the right -->
           <li><a href='tickets.html'>Tickets</a></li>
           <li><a href='stations.html'>Stations</a></li>
           <li><a href='about.html'>About</a></li>
         </ul>
       </div>
     </div>
+    
     <div class='container'>
+      
       <div class='row well well-lg'>
         <div class='col-md-6'>
           <h2>The Fastest Way to Space</h2>
           <p class='lead'>Make your way to space in the comfort of your own rocket, elevator or transporter.</p>
-          <button type='button' class='btn btn-lg btn-default'>Take the Tour</button>
+          <div class='btn-group'>
+            <button type='button' data-toggle="dropdown" class='btn btn-default btn-lg dropdown-toggle'>
+              Take the Tour<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <!-- This lets bootstrap know this list is a dropdown menu
+              It won't show uo on page load -->
+              <li><a href='#'>Transporter</a></li>
+              <li><a href='#'>Orbital Elevator</a></li>
+              <li><a href='#'>RocketBus</a></li>
+              <li class="divider"></li>
+              <li><a href='#'>Learn More</a></li>
+            </ul>
+          </div>
           <button type='button' class='btn btn-lg btn-primary'>Book Tickets Now</button>
         </div>
         <div class='col-md-6 visible-md visible-lg'>
           <img src='images/img-header.jpg' alt='Blast off with Bootstrap' />
         </div>
       </div>
+      
       <div class='row text-center features'>
+        
         <div class='col-sm-4 col-xs-10 col-xs-offset-1 col-sm-offset-0'>
           <i class='glyphicon glyphicon-briefcase'></i>
           <h3>Book Today!</h3>
@@ -47,8 +81,10 @@
           <h3>RocketBus&reg;</h3>
           <p>For cheapest fares, catch the next RocketBus&reg; to the stars. Cheaper on your wallet, and easiest way to make friends.</p>
         </div>
-      </div>
+      
+      </div>    
     </div>
+    
     <div class='quote'>
       <div class='container'>
         <blockquote>
@@ -57,15 +93,18 @@
         </blockquote>
       </div>
     </div>
+    
     <div class='container transport-systems'>
+      
       <div class='row'>
         <div class='col-md-10 col-md-offset-1'>
           <h2>Our Transport Systems</h2>
           <p>Learn more about our transport systems to find out which one is right for you. Pick out the mode of transport that works for your budget and risk level.</p>
         </div>
       </div>
-
+      
       <div class='row text-center'>
+        
         <div class='transporter col-md-3 col-md-offset-1 well well-sm'>
           <h3>Transporter</h3>
           <ul class='list-unstyled'>
@@ -75,6 +114,7 @@
           </ul>
           <p><button class='btn btn-info'><i class='glyphicon glyphicon-transfer'></i> Beam Me Up!</button></p>
         </div>
+        
         <div class='space-elevator col-md-3 col-md-offset-1 well well-sm'>
           <h3>Space Elevator</h3>
           <ul class='list-unstyled'>
@@ -84,6 +124,7 @@
           </ul>
           <p><button class='btn btn-info'><i class='glyphicon glyphicon-sort'></i> Board the Elevator!</button></p>
         </div>
+        
         <div class='rocketbus col-md-3 col-md-offset-1 well well-sm'>
           <h3>RocketBus</h3>
           <ul class='list-unstyled'>
@@ -93,8 +134,10 @@
           </ul>
           <p><button class='btn btn-info'><i class='glyphicon glyphicon-plane'></i> Blast Off!</button></p>
         </div>
+      
       </div>
     </div>
+    
     <div class='quote'>
       <div class='container'>
         <blockquote>
@@ -103,11 +146,12 @@
         </blockquote>
       </div>
     </div>
+    
     <div class='container'>
       <div class='row'>
+        
         <div class='col-md-8'>
           <h2>Plan Your Trip Today!</h2>
-
           <ul class='nav nav-tabs'>
             <li class='active'><a href='#time'>Todays Times</a></li>
             <li><a href='#deals'>Hot Deals</a></li>
@@ -125,13 +169,17 @@
               <p>Forecast</p>
             </div>
           </div>
+        
         </div>
+        
         <div class='col-md-3 col-md-offset-1'>
+          
           <div class='panel-group'>
+            
             <div class='panel panel-success'>
               <div class='panel-heading'>
                 <h4 class='panel-title'>
-                  <a href='#systemsOperational' data-toggle="collapse" data-target='#systemsOperational'>All Systems Operational</a>
+                  <a data-toggle='collapse' data-parent='.panel-group' href='#systemsOperational'>All Systems Operational</a>
                 </h4>
               </div>
               <div id='systemsOperational' class='panel-collapse collapse in'>
@@ -148,9 +196,9 @@
 
             <div class='panel panel-warning'>
               <div class='panel-heading'>
-                 <h4 class='panel-title'>
-                   <a href='#weatherAlert' data-toggle="collapse" data-target='#weatherAlert'>Weather Alert</a>
-                 </h4>
+                <h4 class='panel-title'>
+                  <a data-toggle='collapse' data-parent='.panel-group' href='#weatherAlert'>Weather Alert</a>
+                </h4>
               </div>
               <div id='weatherAlert' class='panel-collapse collapse'>
                 <div class='panel-body'>
@@ -167,7 +215,7 @@
             <div class='panel panel-danger'>
               <div class='panel-heading'>
                 <h4 class='panel-title'>
-                  <a href='#transportationWarning' data-toggle="collapse" data-target='#transportationWarning'>Transportation Generals Warning: Transporters</a>
+                  <a data-toggle='collapse' data-parent='.panel-group' href='#transportationWarning'>Transportation Generals Warning: Transporters</a>
                 </h4>
               </div>
               <div id='transportationWarning' class='panel-collapse collapse'>
@@ -176,13 +224,16 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
+    
     <div class='footer'>
       <div class='container'>
         <div class='row'>
+          
           <div class='col-md-3 col-sm-4 col-xs-6'>
             <h4>Who We Are</h4>
             <p><i>Blasting Off With Bootstrap</i> is the fastest way to space. <a href='tickets.html'>Book your ticket today</a>!</p>
